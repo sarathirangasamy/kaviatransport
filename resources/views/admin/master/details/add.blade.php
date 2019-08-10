@@ -38,6 +38,42 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <div class="col-sm-12">
+                                            <label>From</label>
+                                            <input type="text" class="form-control" value="{{ old('from_place') }}" placeholder="Enter From Place" name="from_place"  required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label>To</label>
+                                            <input type="text" class="form-control" value="{{ old('to_place') }}" placeholder="Enter To Place" name="to_place"  required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label>From Address</label>
+                                            <textarea class="form-control" id="from_address" name="from_address" rows="3" placeholder="Enter From Address" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label>To Address</label>
+                                            <textarea class="form-control" id="to_address" name="to_address" rows="3" placeholder="Enter To Address" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
                                             <label>Weight-</label>
                                             <input type="number" class="form-control CalculateValue weight" value="{{ old('weight') }}" placeholder="Enter Weight" name="weight">
                                         </div>
@@ -117,7 +153,7 @@
                                     <div class="form-group">
                                         <div class="col-sm-12">
                                             <label>Amount Type</label>
-                                            <select class="form-control AdvanceType CalculateTotalFrightValue" name="AdvanceType">
+                                            <select class="form-control AdvanceType CalculateTotalFrightValue" name="advance_type">
                                             <option selected disabled>Please Select Advance Type</option>
                                                 <option value="amount">Amount</option>
                                                 <option value="percentage">Percentage %</option>
@@ -135,7 +171,7 @@
                                     <div class="form-group AdvancePercentage_div">
                                         <div class="col-sm-12">
                                             <label>Advance in Percentage</label>
-                                            <input type="number" class="form-control AdvancePercentage CalculateTotalFrightValue" value="{{ old('advance_in_percentage') }}" placeholder="Enter Advance" name="advance" onkeyup="this.value = minmax(this.value, 0, 100)">
+                                            <input type="number" class="form-control AdvancePercentage CalculateTotalFrightValue" value="{{ old('advance_in_percentage') }}" placeholder="Enter Advance" name="advance_in_percentage" onkeyup="this.value = minmax(this.value, 0, 100)">
                                         </div>
                                      </div>
                                 </div>
@@ -145,7 +181,7 @@
                                     <div class="form-group">
                                         <div class="col-sm-12">
                                              <label>Balance</label>
-                                            <input type="number" class="form-control BalanceAmount" value="{{ old('balance') }}" placeholder="Enter Balance" name="balance">
+                                            <input type="number" class="form-control BalanceAmount" value="{{ old('balance') }}" placeholder="Enter Balance" name="balance" readonly=""> 
                                         </div>
                                      </div>
                                  </div>
@@ -269,7 +305,7 @@
                     
                 if($('.AdvanceType').val() == 'amount'){
                     BalanceAmount = ((parseFloat($('.TotalFrightValue').val() || 0)) - parseFloat($('.AdvanceAmount').val() || 0)).toFixed(2);
-                }else{
+                }else{ 
                     BalanceAmount = (parseFloat($('.TotalFrightValue').val())  - (parseFloat($('.AdvancePercentage').val())/ 100) * $('.TotalFrightValue').val()).toFixed(2);
                 }
                 $('.BalanceAmount').val(BalanceAmount);

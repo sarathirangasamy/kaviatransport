@@ -20,5 +20,7 @@ Route::resource('/master/details', 'AdminController\DetailsController');
 
 Route::get('/getCustomerDetails', 'AdminController\DetailsController@getCustomerDetails');
 
+Route::get('/print', 'AdminController\DetailsController@print')->name('print');
+
 
 

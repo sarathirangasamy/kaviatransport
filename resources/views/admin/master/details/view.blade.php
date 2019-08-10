@@ -6,9 +6,11 @@
         <div class="col-xs-12">
             <div class="box box-info">
                 <div class="box-header">
-                    <h4>
+                    <h4>                         
                         <center>Details</center>
+                        <a href="{{ route('admin.print') }}"><button class="btn btn-info pull-right">Print</button></a>
                         <a href="{{ action('AdminController\DetailsController@create') }}"><button class="btn btn-info pull-right">Add Details</button></a>
+
                     </h4>
                 </div>
                  <div class="box-body">
@@ -17,6 +19,7 @@
                             <table class="table table-bordered table-striped DataTable table-hover">
                                 <thead>
                                     <tr>
+                                        <th>LR ID</th>
                                         <th>Loading Date</th>
                                         <th>Truck No</th>
                                         <!-- <th>Weight </th> -->
@@ -27,7 +30,7 @@
                                         <!-- <th>Halting </th> -->
                                         <th>Comission</th>
                                         <!-- <th>otal Frieght</th> -->
-                                        <th>Advance 80%</th>
+                                        
                                         <th>Balance</th>
                                         <!-- <th>Remark</th> -->
                                         <!-- <th>Note</th> -->
@@ -41,6 +44,8 @@
                                 <tbody>
                                     @foreach($detail as $details)
                                         <tr>
+                                            <td>{{ $details->lr_number }}</td>
+
                                             <td>{{ $details->loading_date }}</td>
                                             <td>{{ $details->truckno }}</td>
                                             <!-- <td>{{ $details->weight }}</td> -->
@@ -51,7 +56,7 @@
                                             <!-- <td>{{ $details->halting }}</td> -->
                                             <td>{{ $details->comission }}</td>
                                             <!-- <td>{{ $details->totalfrieght }}</td> -->
-                                            <td>{{ $details->advance }}</td>
+                                            
                                             <td>{{ $details->balance }}</td>
                                             <!-- <td>{{ $details->remark }}</td> -->
                                             <!-- <td>{{ $details->note }}</td> -->
