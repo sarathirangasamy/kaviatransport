@@ -89,8 +89,7 @@
                                     <div class="form-group">
                                         <div class="col-sm-12">
                                             <label>District <span>*</span></label>
-                                                <select class="form-control District DistrictSelect" name="district">
-
+                                                <select class="form-control District DistrictValue" name="district">
                                             </select>
                                         </div>
                                      </div>
@@ -131,16 +130,13 @@
                     url: "/getDistrict",
                     data: {State_id: State_id},
                     success: function(data) {
-                        console.log(data);
                         if (data != '') {
-                            $(".District").attr('disabled',false);
-                            $('.District').html(data);
-                        } else {
-                            $('.District').html('');
+                            var DistrictDetails = '';
+                            $.each(data, function (index, value) {
+                                DistrictDetails += '<option value="'+value.id+'">'+value.DistrictName+'</option>';
+                            });
+                            $('.District').html(DistrictDetails);
                         }
-
-                    },error:function(data){
-                        console.log(data);
                     }
                 });
             });

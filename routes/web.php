@@ -15,7 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/getCustomerDetails', 'AdminController\DetailsController@getCustomerDetails');
+Route::get('/getCustomerDetails', 'CommonController@getCustomerDetails');
+
+Route::get('/getDistrict', 'CommonController@getDistrict');
 
 
 Route::group(['prefix' => 'admin'], function () {

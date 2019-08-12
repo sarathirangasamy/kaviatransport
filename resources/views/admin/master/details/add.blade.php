@@ -285,7 +285,11 @@
                 data: {Customer_id: Customer_id},
                 success: function(data) {
                     frieght = (data.amount);
-                    $('.frieght').val(frieght * $('.weight').val());
+                    if($('.weight').val() != ''){
+                        $('.frieght').val(frieght * $('.weight').val());
+                    }else{
+                        $('.frieght').val(frieght);
+                    }
                 }
             });
         });
