@@ -48,6 +48,9 @@ class BrokerController extends Controller
         $broker->mobile_number_3 = request('mobile_number_3');
         $broker->mobile_number_4 = request('mobile_number_4');
         $broker->address = request('address');
+        $broker->state = request('state');
+        $broker->district = request('district');
+        $broker->service = request('service');
         // $broker->address = request('districts');
         // $broker->address = request('states');
         // $broker->admin_id = auth()->user()->id;
@@ -94,6 +97,9 @@ class BrokerController extends Controller
         $broker->mobile_number_3 = request('mobile_number_3');
         $broker->mobile_number_4 = request('mobile_number_4');
         $broker->address = request('address');
+        $broker->state = request('state');
+        $broker->district = request('district');
+        $broker->service = request('service');
         $broker->save();
        return redirect(action('AdminController\BrokerController@index'));
     }

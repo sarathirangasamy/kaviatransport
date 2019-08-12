@@ -20,7 +20,11 @@ class CreateBrokersTable extends Migration
             $table->string('mobile_number_2')->nullable();
             $table->string('mobile_number_3')->nullable();
             $table->string('mobile_number_4')->nullable();
-             $table->string('address');
+            $table->string('address');
+            $table->string('state');
+            $table->string('district');
+            $table->string('service');
+             
              
             $table->timestamps();
         });

@@ -24,6 +24,9 @@
                                         <th>Mobile Number 3 Number</th>
                                         <th>Mobile Number 4</th>
                                         <th>Address</th>
+                                        <th>State</th>
+                                        <th>District</th>
+                                        <th>Service</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -36,6 +39,9 @@
                                             <td>{{ $broker->mobile_number_3 }}</td>
                                             <td>{{ $broker->mobile_number_4 }}</td>
                                             <td>{{ $broker->address }}</td>
+                                            <td>{{ $broker->state }}</td>
+                                            <td>{{ $broker->district }}</td>
+                                            <td>{{ $broker->service }}</td>
                                             <td>
                                                 <form method="POST" enctype="multipart/form-data" action="{{ action('AdminController\BrokerController@destroy',$broker->id) }}">
                                                     {{ csrf_field() }}

@@ -131,11 +131,6 @@ class DetailsController extends Controller
         //
     }
 
-    public function getCustomerDetails()
-    {
-        return $Data['Customers'] = Customer::findorfail(request('Customer_id'));
-    }
-
     public function print()
     {
         $Data['print'] = Details::where([['admin_id',auth()->user()->id]])->get();
